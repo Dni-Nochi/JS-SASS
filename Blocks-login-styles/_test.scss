@@ -1,0 +1,32 @@
+@use '../helpers/' as *;
+
+.ds {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+
+.box {
+  width: rem(150);
+  height: rem(150);
+  border: rem(10) solid var(--color-dark);
+}
+
+.green {
+  background-color: var(--color-green);
+}
+
+.bt {
+  cursor: pointer;
+  margin-top: rem(10);
+  padding: rem(5);
+}
+
+.headen-on {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.headen-of {
+  display: flex;
+}

@@ -1,0 +1,11 @@
+@use 'sass:math';
+@use './Function' as *;
+
+@mixin container {
+    width: rem(1280);
+    margin: 0 auto;
+}
+
+@mixin hidden-on {
+    display: none;
+}

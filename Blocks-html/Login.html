@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <input id="input" class="testInput" type="text"> <button type="submit" id="button">Send</button>
+    </header>
+
+    <main>  
+        <div id="modal" class="entry">       
+            <div class="entry__box">
+                <div class="entry__header">
+                    <h2 class="entry__title">Вход</h2>
+                    <button class="entry__exit">&#x2716;</button>
+                </div>
+                <div class="entry__both">
+                    <div class="entry__signup">
+                        <p class="entry__subtitle">C помощью почты</p>
+                        <input id="email" class="entry__email input" type="email" placeholder="Почта">
+                        <input id="password" class="entry__pass input" type="password" placeholder="Пароль">
+                        <div id="errEmail" class="hidden-on hidden-of">Введен неверный логин</div>
+                        <div id="errPassword" class="hidden-on hidden-of">Введен неверный пароль</div>
+                        <div class="entry__check">
+                            <input class="entry__checkbox" type="checkbox">
+                            <button class="entry__remember" type="submit">Запомнить</button>
+                            <a class="entry__help" target="_blank" href="./ErrorLog.html">Забыли пароль?</a>
+                        </div>
+                        <button id="submit" class="entry__submit input">Войти</button>
+                        <div id="submitError" class="hidden-on hidden-of">Неправильно введен логин или пароль</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    <script type="module" src="../Js-part/loginTheme.js"></script>
+</body>
+</html>

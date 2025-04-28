@@ -1,0 +1,31 @@
+@use './helpers/' as *;
+:root {
+    --color-light: #fff;
+    --color-light-1: #F5F5F5;
+    --color-light-2: #F4F4F4;
+
+    --color-gray: #9A9FA1;
+    --color-gray-1: #aeb1b2;
+    --color-gray-2: #9d9fa0;
+    --color-gray-3: #444;
+    --color-gray-4: #e2dfdf;
+
+    --color-dark: #000;
+
+    --color-blue: #00a0b0;
+
+    --color-green: #00c94b;
+
+//----------- For dark Theme ------------------------------------------------------------------------------------------------------------------------------- 
+    --color-bg: var(--color-light);
+    --color-text: var(--color-dark);
+}
+
+.dark-theme {
+    --color-bg: var(--color-dark);
+    --color-text: var(--color-light);
+}
+
+.dark-theme .switch {
+    transform: translateX(rem(20));
+}

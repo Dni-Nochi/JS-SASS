@@ -1,0 +1,83 @@
+@use '../helpers' as *;
+
+.mainT {
+  @include container;
+  padding-inline: rem(20);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: rem(1500);
+    margin: 0 auto;
+  }
+
+  &__wrapper-cont {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: rem(450);
+    margin: 0 auto;
+    padding-block: rem(40);
+  }
+
+  &__slides {
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    width: rem(445);
+    height: rem(320);
+    border-radius: rem(20);
+    box-shadow: 0 rem(8) rem(24) rgb(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    transition: transform 0.6s ease, opacity 0.6s ease, z-index 0.3s;
+  }
+
+  &__slides.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+
+  &__slides.left {
+    transform: translateX(-110%) scale(0.9);
+    opacity: 0.6;
+    z-index: 2;
+  }
+
+  &__slides.right {
+    transform: translateX(110%) scale(0.9);
+    opacity: 0.6;
+    z-index: 2;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: rem(20);
+    height: rem(20);
+    font-size: rem(50);
+    background: none;
+    border: none;
+    color: var(--color-light);
+    margin-inline: rem(20);
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &__button:hover {
+    opacity: 0.5;
+  }
+
+}
+
+.vis {
+  cursor: pointer;
+  width: calc(100% / 3);
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+}

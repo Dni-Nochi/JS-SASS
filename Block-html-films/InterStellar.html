@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Interstellar</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header__title">      
+                <article class="header__preview">
+                    <div class="header__preview-name">
+                        <button class="header__preview-entry" id="entry">
+                            Вход
+                            <span class="header__preview-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24"  >
+                                    <polygon points="7.293 4.707 14.586 12 7.293 19.293 8.707 20.707 17.414 12 8.707 3.293 7.293 4.707" class="header__preview-arrow"/>
+                                  </svg>
+                            </span>
+                        </button>
+                        <div id="modal" class="entry">       
+                            <div class="entry__box">
+                                <form action="/submit" method="POST">
+                                    <h2 class="entry__title">Вход</h2>
+                                    <button class="entry__exit">&#x2716;</button>
+                                    <div class="entry__both">
+                                        <div class="entry__signup">
+                                            <p class="entry__subtitle">C помощью почты</p>
+                                            <input id="email" class="entry__email input" type="email" placeholder="Почта">
+                                            <input id="password" class="entry__pass input" type="text" placeholder="Пароль">
+                                            <p id="errEmail" class="hidden-on hidden-of-login">Введен неверный логин</p>
+                                            <p id="errPassword" class="hidden-on hidden-of-login">Введен неверный пароль</p>
+                                            <div class="entry__check">
+                                                <label class="entry__checkbox">
+                                                    <input id="checkSpan"  type="checkbox"> 
+                                                    <span ></span>
+                                                    <button id="bt" class="entry__remember" type="button">Запомнить</button>
+                                                    <a class="entry__help" target="_blank" href="./Blocks-html/ErrorLog.html">Забыли пароль?</a>
+                                                </label>
+                                            </div>
+                                            <button id="submit" class="entry__submit input" type="button">Войти</button>
+                                            <p id="submitError" class="hidden-on hidden-of-login">Неправильно введен логин или пароль</p>
+                                        </div>    
+                                    </div>
+                                </form>  
+                            </div>
+                        </div>      
+                    </div>  
+
+                    <h1 class="header__preview-logo">
+                        <a class="header__preview-main" href="../index.html"> KinoRezka</a>  
+                    </h1> 
+                    <button class="header__preview-theme" id="theme">
+                        <img src="../For-icon/Light-theme.png" width="18px">
+                        <img src="../For-icon/Dark-theme.png" width="18px">
+                    </button>
+                    
+                </article>     
+        
+                <nav class="header__menu">
+                    <ul class="header__menu-movieList">
+                        <li class="header__menu-li">
+                            <a id="openerAll" class="header__menu-links" href="#">Фильмы
+                              <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        <li class="header__menu-li">
+                            <a class="header__menu-links" href="#">Сериалы
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        <li class="header__menu-li">
+                            <a class="header__menu-links" href="#">Мультфильмы
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        <li class="header__menu-li"> 
+                            <a class="header__menu-links" href="#">Аниме
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        <li class="header__menu-li"> 
+                            <a class="header__menu-links" href="#">Новинки
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>        
+                            </a>
+                        </li>
+                        <li class="header__menu-li"> 
+                            <a class="header__menu-links" href="#">Анонсы
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        <li class="header__menu-li"> 
+                            <a class="header__menu-links" href="#">Подборки
+                                <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                            </a>
+                        </li>
+                        
+                        <section class="header__menu-search">
+                            <svg id="lup" class="header__menu-mg"  viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M20.56,18.44l-4.67-4.67a7,7,0,1,0-2.12,2.12l4.67,4.67a1.5,1.5,0,0,0,2.12,0A1.49,1.49,0,0,0,20.56,18.44ZM5,10a5,5,0,1,1,5,5A5,5,0,0,1,5,10Z" fill='var(--color-gray)'/></svg>
+                            <input id="inputF" class="header__menu-input" placeholder="Поиск фильмов и сериалов">
+                        </section>
+                    </ul>
+                </nav>
+
+                <div class="opener__cont">
+                    <div id="openerBody" class="opener__background">
+                        <div class="opener__body">
+                            <ul>
+                                <li id="openerLi" class="opener__li">
+                                    Фантастика
+                                </li>
+                                <li class="opener__li">
+                                    Драма
+                                </li>
+                
+                                <li class="opener__li">
+                                    Боевики
+                                </li>
+                
+                                <li class="opener__li">
+                                    Вестерн
+                                </li>
+                
+                                <li class="opener__li">
+                                    Документальный 
+                                </li>
+                
+                                <li class="opener__li">
+                                    Исторический
+                                </li>
+                
+                                <li class="opener__li">
+                                    Комедия
+                                </li>
+                            </ul>
+                
+                            <ul>
+                                <li class="opener__li">
+                                    Мюзкл
+                                </li>
+                
+                                <li class="opener__li">
+                                    Научный
+                                </li>
+                            </ul>
+                      </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mainF">
+
+        <div class="mainF__wrapper">
+            <button id="prev" class="mainF__button-wrap" type="button">&#10094;</button>
+            <diV id="cont" class="mainF__wrapper-cont">
+                <ul class="mainF__wrapper-cont">
+                    <li class="mainF__slides-wrap">
+                        <img id="fImg" src="../For-img/Interstellar5.jpg">
+                        <p class="mainF__slides-text">Отрывок из фантастического фильма Интерстеллар</p>
+                    </li>
+                    <li class="mainF__slides-wrap">
+                        <img id="tImg" src="../For-img/Interstellar4.jpg">
+                        <p class="mainF__slides-text">Отрывок из фантастического фильма Интерстеллар</p>
+                    </li>
+                    <li class="mainF__slides-wrap">
+                        <img id="tImg" src="../For-img/Interstellar6.jpg">
+                        <p class="mainF__slides-text">Отрывок из фантастического фильма Интерстеллар</p>
+                    </li>
+                    <li class="mainF__slides-wrap">
+                        <img id="tImg" src="../For-img/TARS.jpg">
+                        <p class="mainF__slides-text">Отрывок из фантастического фильма Интерстеллар</p>
+                    </li>
+                    <li class="mainF__slides-wrap">
+                        <img id="tImg" src="../For-img/Interstellar7.jpg">
+                        <p class="mainF__slides-text">Отрывок из фантастического фильма Интерстеллар</p>
+                    </li>
+                </ul>
+            </diV>
+            <button id="next" class="mainF__button-wrap" type="button">&#10095;</button>
+        </div>
+
+        <div class="mainF-container">
+
+            <div class="mainF__content">
+                <img class="mainF__content-img" src="../For-img/Interstellar_2014.jpg">
+                <section class="mainF__content-info">
+                    <h1 class="mainF__content-title">Interstellar</h1>
+                    <h5 class="mainF__content-genre">Фильм</h5>
+                    <div class="mainF__content-table">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Рейтинг:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links dis">
+                                       <span class="mainF__content-eva"><a target = "_blank" href="https://www.imdb.com/title/tt0409591/">IMDb:</a> <b>8.7 </b><i> (2 188 309)</i></span> 
+                                       <span class="mainF__content-eva"><a target = "_blank" href="https://www.kinopoisk.ru/series/283290/?utm_referrer=rezka-ua.tv">Кинопоиск:</a> <b>8.65 </b> <i>(1 008 635)</i></span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Входит в списки:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links pad-bottom">
+                                       <a href="#">Лучшая фантастика 2014 года </a> <i>(1 место)</i><br>
+                                        <a href="#">Лучшие драмы 2014 года</a> <i>(1 место)</i><br>
+                                        <a href="#">Лучшие приключения 2014 года</a> <i>(1 место)</i><br>
+                                        <a href="#">Лучшие зарубежные фильмы 2014 года</a> <i>(1 место)</i><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Дата выхода:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        26 октября <a href="#">2014 года</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Страна:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        <a href="#">США, Великобритания, Канада</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Режиссер:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links pad-bottom">
+                                        <a href="#">Кристофер Нолан</a> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Жанр:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links pad-bottom">
+                                        <a href="#">Фантастика</a>, 
+                                        <a href="#">Драмы</a>,
+                                        <a href="#">Приключения</a>,
+                                        <a href="#">Зарубежные</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>В качестве:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        720p
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Возраст:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        <p>16+ для более зрелых и понимающих</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>Время:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        169 мин.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="mainF__content-td">
+                                        <h4>В ролях актеры:</h4>
+                                    </td>
+                                    <td class="mainF__content-td-links">
+                                        <span><a href="#">Мэттью МакКонахи</a>,</span>  
+                                        <span><a href="#">Энн Хэтэуэй</a>,</span>
+                                        <span><a href="#">Джессика Честейн</a>,</span>
+                                        <span><a href="#">Маккензи Фой</a>,</span>
+                                        <span><a href="#">Майкл Кейн</a>,</span>
+                                        <span><a href="#">Дэвид Джеси</a>,</span>
+                                        <span><a href="#">Уэс Бентли</a>,</span>
+                                        <span><a href="#">Кейси Аффлек</a>,</span>
+                                        <span><a href="#">Джон Литгоу</a>,</span>
+                                        <span><a href="#">Мэтт Дэймон</a></span>, и другие
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+               
+            </div>
+
+            <div class="mainF__movie-title"><h2>Про что Фильм «Интерстеллар»:</h2></div>
+                    <div class="mainF__movie-des"><p>В будущем климатические изменения привели к катастрофическому снижению урожайности и вымиранию самых распространенных сельскохозяйственных культур. Население страдает от голода и болезней на покрытой песком Земле, а бывший пилот Купер, как и большинство американцев, вынужден был бросить карьеру, чтобы заняться фермерством. Однажды его дочь Мёрфи пугается призрака в собственной спальне, оставившего ей закодированное сообщение. Сначала отец не верит девочке, но вскоре вместе они расшифровывают код и, следуя подсказкам, находят секретную базу НАСА, где ученые занимаются созданием уникального космического корабля, способного пролететь через черную дыру и достичь пригодной для обитания планеты, способной стать новым домом для всего человечества...</p></div>
+            
+            <section class="mainF__movie-cont">
+                <video class="mainF__movie-video" width="800" height="450" controls muted>
+                    <source src="../For-video/Naruto_opennings.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </section>
+
+            <p class="mainF__movie-mess-title">Оставьте свое впечатление </p>
+            <div class="mainF__movie-mess-cont">
+                <textarea id="textareaMess" class="mainF__movie-mess" type="text" placeholder="Комментарии"></textarea>
+                <button id="messButton" class="mainF__movie-mess-submit" type="submit">Send</button>
+            </div>
+            
+            <ul id="listMess" class="mainF__movie-mess-users">
+                
+            </ul>
+        </div>
+        
+    </main>
+    <script type="module" src="../Js-part/indexFilm.js"></script>
+</body>
+</html>

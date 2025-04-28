@@ -1,0 +1,124 @@
+@use '../helpers/' as *;
+.entry{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    inset: 0;
+    background-color: rgb( 0, 0, 0, 0.5);
+    padding: rem(20);
+    overflow-y: auto;
+
+    &__box {
+         padding: rem(15);
+         width: rem(450);
+         border: 1px var(--color-dark) solid;
+         border-radius: rem(15);
+         background-color: var(--color-light-2);
+         color: var(--color-dark);
+    }
+
+    &__title {
+        padding-bottom: rem(10);
+    }
+
+    &__exit {
+        position: absolute;
+        top: 35%;
+        right: 36%;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: rem(22);
+        transform: 50%, -50%;
+    }
+
+    &__both {
+        display: flex;
+    }
+
+    &__signup {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        padding-bottom: rem(10);
+    }
+
+    &__pass {
+        margin-bottom: rem(10);
+    }
+
+    &__check {
+        padding-top: rem(5);
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+    }
+
+    &__checkbox input {
+        display: none;
+    }
+
+    &__checkbox span {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        width: rem(16);
+        height: rem(16);
+        border: rem(1) solid var(--color-dark);
+        border-radius: rem(5);
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__checkbox input:checked + span {
+        background-color: var(--color-green);
+    }
+
+    &__checkbox input:checked + span::after {
+        content: '✔';
+        position: absolute;
+        color: var(--color-light);
+        font-size: rem(14);
+        top: rem(-2);
+        right: rem(3);
+    }
+
+    &__remember {
+        border: 0;
+        background-color: var(--color-light-2);
+        cursor: pointer;
+    }
+
+    &__help {
+        padding-left: rem(20);
+    }
+
+    &__submit {
+        cursor: pointer;
+        margin-top: rem(10);
+    }
+}
+
+.input  {
+    height: rem(30);
+    margin-bottom: rem(10);
+    border-radius: rem(20);
+    padding-left: rem(20);
+    border: 0;
+}
+
+.hidden-on {
+    @include hidden-on
+}
+
+.hidden-of-login {
+    padding-bottom: rem(5);
+    letter-spacing: rem(0.5);
+    font-size: rem(16);
+    color: red;
+}
+

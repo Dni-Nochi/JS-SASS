@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Test</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="header__title">      
+            <article class="header__preview">
+                <div class="header__preview-name">
+                    <button class="header__preview-entry" id="entry">
+                        Вход
+                        <span class="header__preview-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24"  >
+                                <polygon points="7.293 4.707 14.586 12 7.293 19.293 8.707 20.707 17.414 12 8.707 3.293 7.293 4.707" class="header__preview-arrow"/>
+                              </svg>
+                        </span>
+                    </button>
+                    <div id="modal" class="entry">       
+                        <div class="entry__box">
+                            <h2 class="entry__title">Вход</h2>
+                            <button class="entry__exit">&#x2716;</button>
+                            <div class="entry__both">
+                                <div class="entry__signup">
+                                    <p class="entry__subtitle">C помощью почты</p>
+                                    <input id="email" class="entry__email input" type="email" placeholder="Почта">
+                                    <input id="password" class="entry__pass input" type="password" placeholder="Пароль">
+                                    <p id="errEmail" class="hidden-on hidden-of-login">Введен неверный логин</p>
+                                    <p id="errPassword" class="hidden-on hidden-of-login">Введен неверный пароль</p>
+                                    <div class="entry__check">
+                                        <label class="entry__checkbox">
+                                            <input id="checkSpan"  type="checkbox"> 
+                                            <span ></span>
+                                            <button id="bt" class="entry__remember" type="button">Запомнить</button>
+                                            <a class="entry__help" target="_blank" href="./Blocks-html/ErrorLog.html">Забыли пароль?</a>
+                                        </label>
+                                    </div>
+                                    <button id="submit" class="entry__submit input" type="button">Войти</button>
+                                    <p id="submitError" class="hidden-on hidden-of-login">Неправильно введен логин или пароль</p>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>      
+                </div>  
+
+                <h1 class="header__preview-logo">
+                    <a class="header__preview-main" href="../index.html"> KinoRezka</a>  
+                </h1> 
+                <button class="header__preview-theme" id="theme">
+                    <img src="../For-icon/Light-theme.png" width="18px">
+                    <img src="../For-icon/Dark-theme.png" width="18px">
+                </button>
+                
+            </article>     
+    
+            <nav class="header__menu">
+                <ul class="header__menu-movieList">
+                    <li class="header__menu-li">
+                        <a id="openerAll" class="header__menu-links" href="#">Фильмы
+                          <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+                    <li class="header__menu-li">
+                        <a class="header__menu-links" href="#">Сериалы
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+                    <li class="header__menu-li">
+                        <a class="header__menu-links" href="#">Мультфильмы
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+                    <li class="header__menu-li"> 
+                        <a class="header__menu-links" href="#">Аниме
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+                    <li class="header__menu-li"> 
+                        <a class="header__menu-links" href="#">Новинки
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>        
+                        </a>
+                    </li>
+                    <li class="header__menu-li"> 
+                        <a class="header__menu-links" href="#">Анонсы
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+                    <li class="header__menu-li"> 
+                        <a class="header__menu-links" href="#">Подборки
+                            <svg class="header__menu-arrow" height="12px" width="12px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z"/></svg>
+                        </a>
+                    </li>
+
+                    <svg class="header__menu-mg" height="22px" width="22px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.56,18.44l-4.67-4.67a7,7,0,1,0-2.12,2.12l4.67,4.67a1.5,1.5,0,0,0,2.12,0A1.49,1.49,0,0,0,20.56,18.44ZM5,10a5,5,0,1,1,5,5A5,5,0,0,1,5,10Z" fill='var(--color-gray)'/></svg>
+                    <input class="header__menu-input" placeholder="Поиск фильмов и сериалов">
+                </ul>
+            </nav>
+
+            <div class="opener__cont">
+                <div id="openerBody" class="opener__background">
+                  <div class="opener__body">
+                    <ul>
+                      <li id="openerLi" class="opener__li">
+                        Фантастика
+                      </li>
+            
+                      <li class="opener__li">
+                        Драма
+                      </li>
+            
+                      <li class="opener__li">
+                        Боевики
+                      </li>
+            
+                      <li class="opener__li">
+                        Вестерн
+                      </li>
+            
+                      <li class="opener__li">
+                        Документальный 
+                      </li>
+            
+                      <li class="opener__li">
+                        Исторический
+                      </li>
+            
+                      <li class="opener__li">
+                        Комедия
+                      </li>
+                    </ul>
+            
+                    <ul>
+                      <li class="opener__li">
+                        Мюзкл
+                      </li>
+            
+                      <li class="opener__li">
+                        Научный
+                      </li>
+                    </ul>
+                  </div>
+                </div>  
+              </div>
+
+        </div>
+    </div>
+</header>
+
+  <main class="mainT">
+    <div class="mainT__wrapper">
+      <button id="prev" class="mainT__button" type="button">&#10094;</button>
+      <diV id="cont" class="mainT__container">
+        <img id="fImg" class="mainT__slides" src="../For-img/Interstellar_2014.jpg">
+        <img id="sImg" class="mainT__slides " src="../For-img/Iron Man 1.webp">
+        <img id="tImg" class="mainT__slides" src="../For-img/Naruto-manga.jpg">
+        <!-- <img class="mainT__slids" src="../For-img/Rocky.webp"> -->
+      </diV>
+      <button id="next" class="mainT__button" type="button">&#10095;</button>
+    </div>
+  </main>
+<script type="module" src="../Js-part/index.js"></script>
+</body>
+</html>

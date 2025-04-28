@@ -1,0 +1,36 @@
+@use '../helpers/' as *;
+
+.opener {
+
+  &__cont {
+    @include container;
+    // position: relative;
+    z-index: 100;
+  }
+  &__background {
+    position: absolute;
+    display: none;
+    max-width: rem(960);
+    width: auto;
+    padding: rem(20) rem(20) rem(15) rem(20);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    box-shadow: inset rem(0) rem(1) rem(8) var(--color-gray-4);
+    border-bottom-left-radius: rem(10);
+    border-bottom-right-radius: rem(10);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    cursor: pointer;
+  }
+
+  &__li {
+    padding-bottom: rem(10);
+    transition: all 0.3s linear;
+  }
+}

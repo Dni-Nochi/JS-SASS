@@ -1,0 +1,23 @@
+@use '../helpers/' as *;
+
+body {
+   color: var(--color-text);
+   transition: background-color 0.2s ease ,color 0.2s ease;
+}
+
+.switch {
+   position: absolute;
+   left: rem(5);
+   width: rem(20);
+   height: rem(20);
+   border-radius: 50%;
+   background-color: var(--color-light);
+   transition: transform 0.5s ease;
+}
+
+.icons {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: rem(0) rem(8);
+}
