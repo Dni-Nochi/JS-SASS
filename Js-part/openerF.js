@@ -13,7 +13,7 @@ function openBody() {
   function offBody() {
     timer = setTimeout(() => {
       openerElem.style.display = 'none';
-    }, 400)
+    }, 300)
   }
 
   openerAll.addEventListener('mouseover', onBody);
