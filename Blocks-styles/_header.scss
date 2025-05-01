@@ -108,7 +108,7 @@
         &-movieList {
             position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             @include container;
             padding: rem(20); 
@@ -136,7 +136,7 @@
 
         &-search {
             position: absolute;
-            right: 4%;
+            right: 1%;
             display: flex;
             align-items: center;
         }
@@ -170,14 +170,19 @@
         }
 
         &-catalog {
+            width: rem(1320);
+            margin: 0 auto;
+            background-color: var(--color-light);
+        }
+
+        &-section {
             display: flex;
             flex-wrap: wrap;
-            background-color: var(--color-light);
-            width: rem(1320);
+            width: rem(1210);
             margin: 0 auto;
         }
 
-        &-catalog p {
+        &-section p {
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -195,5 +200,5 @@
 .focus {
     // display: grid;
     right: 0;
-    width: rem(1200);
+    width: rem(1250);
 }
