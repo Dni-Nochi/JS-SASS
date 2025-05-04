@@ -144,7 +144,7 @@
   border: 0;
   border-radius: 0.625rem;
   outline: none;
-  transition: all 1s ease-out;
+  transition: all 0.8s ease-out;
 }
 .header__menu-catalog {
   width: 82.5rem;
@@ -180,7 +180,7 @@
   justify-items: center;
   justify-content: center;
   grid-template-columns: repeat(5, 10.9375rem);
-  gap: 3.4375rem;
+  gap: 5.125rem;
   background-color: var(--color-light);
   width: 80rem;
   margin: 0 auto;

@@ -1,51 +1,32 @@
-const openerLiElem = document.getElementsByClassName('opener__li')
-const headerMenuElem = document.querySelector('.header__menu-section')
-const ArrayOpenerLiElem = Array.from(openerLiElem)
+const openerLiElem = document.getElementsByClassName('opener__li');
+const headerMenuElem = document.querySelector('.header__menu-section');
+const filmsElem = document.querySelectorAll('.main__grid a');
 
-console.log(openerLiElem)
-console.log(ArrayOpenerLiElem)
+const ArrayOpenerLiElem = Array.from(openerLiElem);
+const ArrayFilmsElem = Array.from(filmsElem)
 
-let previousClicked = null;
+ArrayFilmsElem.forEach(function(item) {
+
+});
 
 function catalogFilms() {
 
-  ArrayOpenerLiElem.forEach(function(item, index){
+  ArrayOpenerLiElem.forEach(function(item){
     item.addEventListener('click', function() {
-      let groupFilms = document.querySelectorAll('main__grid a')
-      let p = document.createElement('p')
-      p.innerText = item.innerText;
-      headerMenuElem.append(p)
-      console.log(p)
+      const genreText = item.textContent.trim()
+      const existingGenres = headerMenuElem.querySelectorAll('p')
+      const alreadyExists = Array.from(existingGenres).some(p => p.textContent === genreText)
 
-      if(previousClicked === item) {
-          console.log(index)
+      if(!alreadyExists) {
+        const p = document.createElement('p');
+        p.textContent = genreText;
+        headerMenuElem.appendChild(p);
+        console.log(`Добавлен жанр: ${genreText}`);
       } else {
-        console.log('First click')
+        console.log(`Жанр: "${genreText}" уже добавлен`)
       }
-
-      console.log('Current click: ', item.textContent);
-
-      previousClicked = item
     })
   })
-
-  
-
-  // openerLiElem.addEventListener('click', function() {
-  //   
-  //   
-  //   
-  //   headerMenuElem.append(p)
-
-  //   groupFilms.forEach(function (elem) {
-  //     if (p === groupFilms) {
-  //       console.log('DA')
-  //     }
-  //     else {
-  //       console.log('No')
-  //     }
-  //   })
-  // })
 }
 catalogFilms()
 
