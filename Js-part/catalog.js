@@ -19,9 +19,16 @@ function catalogFilms() {
 
       if(!alreadyExists) {
         const p = document.createElement('p');
+        const cancCircle = document.createElement('button');
+        cancCircle.classList.add('cancCircle')
         p.textContent = genreText;
         headerMenuElem.appendChild(p);
+        p.appendChild(cancCircle);
         console.log(`Добавлен жанр: ${genreText}`);
+
+        cancCircle.addEventListener('click', () => {
+            p.remove();
+        })
       } else {
         console.log(`Жанр: "${genreText}" уже добавлен`)
       }
