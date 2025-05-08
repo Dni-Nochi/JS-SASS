@@ -3,11 +3,8 @@ const headerMenuElem = document.querySelector('.header__menu-section');
 const filmsElem = document.querySelectorAll('.main__grid a');
 
 const ArrayOpenerLiElem = Array.from(openerLiElem);
-const ArrayFilmsElem = Array.from(filmsElem)
-
-ArrayFilmsElem.forEach(function(item) {
-
-});
+const ArrayFilmsElem = Array.from(filmsElem);
+const normalize = str => str.trim().toLowerCase();
 
 function catalogFilms() {
 
@@ -26,9 +23,24 @@ function catalogFilms() {
         p.appendChild(cancCircle);
         console.log(`Добавлен жанр: ${genreText}`);
 
-        cancCircle.addEventListener('click', () => {
+        ArrayFilmsElem.forEach(function(item) {
+          let pText = normalize(p.textContent);
+          let itemText = normalize(item.textContent)
+
+          if(pText.includes(itemText) || itemText.includes(pText) == false) {
+            item.classList.add('hide')
+          } else {
+            item.classList.remove('hide')
+            console.log('Braaa')
+          }
+
+          cancCircle.addEventListener('click', () => {
+            item.classList.remove('hide')
             p.remove();
-        })
+          })
+          
+        });
+
       } else {
         console.log(`Жанр: "${genreText}" уже добавлен`)
       }
