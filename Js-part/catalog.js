@@ -6,6 +6,26 @@ const ArrayOpenerLiElem = Array.from(openerLiElem);
 const ArrayFilmsElem = Array.from(filmsElem);
 const normalize = str => str.trim().toLowerCase();
 
+
+function updateVisibleFilms() {
+  const selectedGenres = Array.from(headerMenuElem.querySelectorAll('p')).map(p =>
+    normalize(p.textContent)
+  );
+
+  if (selectedGenres.length === 0) {
+    ArrayFilmsElem.forEach(film => film.classList.remove('hide'));
+    return;
+  }
+
+  ArrayFilmsElem.forEach(film => {
+    const filmText = normalize(film.textContent);
+    const matches = selectedGenres.some(genre => filmText.includes(genre));
+    film.classList.toggle('hide', !matches);
+    
+  });
+}
+
+
 function catalogFilms() {
 
   ArrayOpenerLiElem.forEach(function(item){
@@ -23,24 +43,12 @@ function catalogFilms() {
         p.appendChild(cancCircle);
         console.log(`Добавлен жанр: ${genreText}`);
 
-        ArrayFilmsElem.forEach(function(item) {
-          let pText = normalize(p.textContent);
-          let itemText = normalize(item.textContent)
+        updateVisibleFilms();
 
-          if(pText.includes(itemText) || itemText.includes(pText) == false) {
-            item.classList.add('hide')
-          } else {
-            item.classList.remove('hide')
-            console.log('Braaa')
-          }
-
-          cancCircle.addEventListener('click', () => {
-            item.classList.remove('hide')
-            p.remove();
-          })
-          
+        cancCircle.addEventListener('click', () => {
+          p.remove();
+          updateVisibleFilms();
         });
-
       } else {
         console.log(`Жанр: "${genreText}" уже добавлен`)
       }
